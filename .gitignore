@@ -2,7 +2,6 @@
 .idea/
 .ipynb_checkpoints/
 secrets/
-vector_db/
 
 
 # Byte-compiled / optimized / DLL files
