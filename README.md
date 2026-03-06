@@ -21,5 +21,5 @@ https://drive.google.com/file/d/1Q850jOtNC7sA9GbBXdDGhKtIgm8S0e9f/view?usp=shari
 7. Streaming chat interface deployed using Gradio
 8. Modular and scalable architecture
 
-Live Page on Hugging Face: https://huggingface.co/spaces/MightyOctopus/seo-expert-chatbot 
+Live App on Hugging Face: https://huggingface.co/spaces/MightyOctopus/seo-expert-chatbot 
 
