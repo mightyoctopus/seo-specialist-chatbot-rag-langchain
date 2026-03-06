@@ -11,7 +11,26 @@ Made with LangChain & RAG and Google Docs API as an external data resource.
 ## Demo Video:
 https://drive.google.com/file/d/1Q850jOtNC7sA9GbBXdDGhKtIgm8S0e9f/view?usp=sharing 
 
-### Technical Features:
+## Architecture Overview
+
+The system follows a Retrieval-Augmented Generation (RAG) pipeline:
+
+1. **Document Ingestion**
+   - Google Docs SEO documentation is collected and processed
+
+2. **Embedding Pipeline**
+   - Documents are chunked and embedded using OpenAI embeddings
+
+3. **Vector Database**
+   - Embeddings stored in **ChromaDB** for semantic retrieval
+
+4. **Query Processing**
+   - User query → retrieval → context injection into LLM
+
+5. **Response Generation**
+   - GPT-5-mini generates grounded SEO strategy responses
+
+## Technical Features:
 1. Full RAG system using LangChain, OpenAI Embeddings, and Chroma DB
 2. Vector database built from ~1000 pages of SEO documentation used internally from an actual SEO agency (Fully permitted for the data use)
 3. External document ingestion using Google Docs API and Google Cloud Service Account
