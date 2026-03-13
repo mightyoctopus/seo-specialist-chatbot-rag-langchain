@@ -1,6 +1,5 @@
 ## SEO Specialist ChatBot 
 
-![SEO Expert Chatbot Diagram](assets/SEO%20Expert%20Chatbot%20App%20Diagram.jpg)
 SEO Expert Bot is a Retrieval Augmented Generation (RAG) chatbot designed to deliver expert-level SEO strategy recommendations using a curated knowledge base of approximately 1000 pages of SEO documentation (internally used REAL data from a SEO agency). 
 
 The system integrates external documents stored in Google Docs, processes them into vector embeddings, and stores them in a Chroma vector database for efficient semantic retrieval. 
@@ -12,7 +11,11 @@ Made with LangChain & RAG and Google Docs API as an external data resource.
 https://drive.google.com/file/d/1Q850jOtNC7sA9GbBXdDGhKtIgm8S0e9f/view?usp=sharing 
 
 ## Architecture Overview
+### Runtime Workflow:
+![SEO Expert Chatbot Diagram](assets/SEO_Expert Chatbot_Runtime.jpg)
 
+### Knowledge Retrieval Process:
+![SEO Expert Chatbot Diagram](assets/SEO_Expert Chatbot_RAG.jpg)
 The system follows a Retrieval-Augmented Generation (RAG) pipeline:
 
 1. **Document Ingestion**
