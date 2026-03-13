@@ -12,10 +12,10 @@ https://drive.google.com/file/d/1Q850jOtNC7sA9GbBXdDGhKtIgm8S0e9f/view?usp=shari
 
 ## Architecture Overview
 ### Runtime Workflow:
-![SEO Expert Chatbot Diagram](assets/SEO_Expert Chatbot_Runtime.jpg)
+![SEO Expert Chatbot Diagram](assets/SEO_Expert%20Chatbot_Runtime.jpg)
 
 ### Knowledge Retrieval Process:
-![SEO Expert Chatbot Diagram](assets/SEO_Expert Chatbot_RAG.jpg)
+![SEO Expert Chatbot Diagram](assets/SEO_Expert%20Chatbot_RAG.jpg)
 The system follows a Retrieval-Augmented Generation (RAG) pipeline:
 
 1. **Document Ingestion**
