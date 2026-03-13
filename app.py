@@ -199,13 +199,12 @@ def chain_rag_elements(vector_store, prompt):
 
     return rag_chain
 
-
-### Controller
+### RAG Workflow
 def build_rag_workflow(embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)):
     ### Instantiate vector store that vectorizes text
-    ### from Google Docs(as the externa resource for RAG vector store)
+    ### from Google Docs(as the external resource for RAG vector store)
     if os.path.exists(db_path) and os.listdir(path=db_path):
-        print("Loading existing vertorstore...")
+        print("Loading existing vectorstore...")
         vector_db = Chroma(
             persist_directory=db_path,
             embedding_function=embeddings
