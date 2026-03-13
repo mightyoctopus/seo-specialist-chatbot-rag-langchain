@@ -2,12 +2,22 @@
 
 import os.path, json
 from typing import List
+from dotenv import load_dotenv
 
 from google.auth.transport.requests import Request
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from langchain.schema import Document
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_chroma import Chroma
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema import Document
+from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
+from langchain_core.output_parsers import StrOutputParser
+from langchain.schema.runnable import RunnablePassthrough
+
+
 
 SCOPES = [
     "https://www.googleapis.com/auth/drive.readonly",
@@ -100,16 +110,6 @@ def get_docs_text() -> List[Document]:
 
 ### Langchain LCEL (RAG) Implementation
 
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_chroma import Chroma
-from langchain.prompts import ChatPromptTemplate
-from langchain.schema import Document
-from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTextSplitter
-from langchain_core.output_parsers import StrOutputParser
-from langchain.schema.runnable import RunnablePassthrough
-
-from dotenv import load_dotenv
-
 OPENAI_MODEL_ID = "gpt-5-mini"
 db_path = "vector_db"
 
@@ -200,19 +200,12 @@ def chain_rag_elements(vector_store, prompt):
     return rag_chain
 
 
-# query = "What is SEO?"
-# chain = chain_rag_elements()
-
-# for chunk in chain.stream(query):
-# print(chunk, end="", flush=True)
-
-
 ### Controller
 def build_rag_workflow(embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)):
     ### Instantiate vector store that vectorizes text
     ### from Google Docs(as the externa resource for RAG vector store)
     if os.path.exists(db_path) and os.listdir(path=db_path):
-        print("Loading existing vertor store...")
+        print("Loading existing vertorstore...")
         vector_db = Chroma(
             persist_directory=db_path,
             embedding_function=embeddings
